@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE Presets [
+  <!ENTITY L "Level_">
+  <!ENTITY B "Boss_">
+  <!ENTITY C "Cutscene_">
+  <!ENTITY I "Inventory_">
+  
+  <!ENTITY AH "02_AutumnHills">
+  <!ENTITY FT "03_ForlornTemple">
+  <!ENTITY CC "04_Catacombs">
+  <!ENTITY BC "06_A_BambooCreek">
+  <!ENTITY HG "05_A_HowlingGrotto">
+  <!ENTITY QM "07_QuillshroomMarsh">
+  <!ENTITY SC "08_SearingCrags">
+  <!ENTITY GP "09_A_GlacialPeak">
+  <!ENTITY TT "10_A_TowerOfTime">
+  <!ENTITY CR "11_A_CloudRuins">
+  <!ENTITY UW "12_UnderWorld">
+  <!ENTITY DC "04_B_DarkCave">
+  <!ENTITY RT "04_C_RiviereTurquoise">
+  <!ENTITY SS "05_B_SunkenShrine">
+  <!ENTITY ES "09_B_ElementalSkylands">
+  <!ENTITY CF "14_CorruptedFuture">
+  <!ENTITY MB "11_B_MusicBox">
+  <!ENTITY EN "Ending">
+  <!ENTITY OS "15_Surf">
+  <!ENTITY VS "16_Beach">
+  <!ENTITY FM "17_Volcano">
+  <!ENTITY VH "18_Volcano_Chase">
+]>
+<Presets>
+  <Preset name="8Bit">
+    <Split name="&L;&AH;"/>
+    <Split name="&C;LeafGolemIntroCutScene"/>
+    <Split name="&L;&FT;"/>
+    <Split name="&L;&CC;"/>
+    <Split name="&C;NecromancerIntroCutscene"/>
+    <Split name="&L;&BC;"/>
+    <Split name="&L;&HG;"/>
+    <Split name="&C;HowlingGrottoBossIntroCutscene"/>
+    <Split name="&L;&QM;"/>
+    <Split name="&C;QuillshroomMarshBossIntroCutscene"/>
+    <Split name="&L;&SC;"/>
+    <Split name="&C;SearingCragsBossIntroCutscene"/>
+    <Split name="&L;&GP;"/>
+    <Split name="&L;&TT;"/>
+    <Split name="&C;TowerOfTimeBossIntroCutscene"/>
+    <Split name="&B;&TT;"/>
+  </Preset>
+  <Preset name="Linear">
+    <Split name="&L;&AH;"/>
+    <Split name="&C;LeafGolemIntroCutScene"/>
+    <Split name="&L;&FT;"/>
+    <Split name="&L;&CC;"/>
+    <Split name="&C;NecromancerIntroCutscene"/>
+    <Split name="&L;&BC;"/>
+    <Split name="&L;&HG;"/>
+    <Split name="&C;HowlingGrottoBossIntroCutscene"/>
+    <Split name="&L;&QM;"/>
+    <Split name="&C;QuillshroomMarshBossIntroCutscene"/>
+    <Split name="&L;&SC;"/>
+    <Split name="&C;SearingCragsBossIntroCutscene"/>
+    <Split name="&L;&GP;"/>
+    <Split name="&L;&TT;"/>
+    <Split name="&C;TowerOfTimeBossIntroCutscene"/>
+    <Split name="&B;&TT;"/>
+    <Split name="&L;&CR;"/>
+    <Split name="&C;ManfredBossIntroCutscene"/>
+    <Split name="&L;&UW;"/>
+    <Split name="&C;DemonGeneralBossIntroCutscene"/>
+    <Split name="&B;&UW;"/>
+  </Preset>
+  <Preset name="Any%">
+    <Split name="&L;&AH;"/>
+    <Split name="&L;&FT;"/>
+    <Split name="&L;&CC;"/>
+    <Split name="&L;&BC;"/>
+    <Split name="&L;&HG;"/>
+    <Split name="&L;&QM;"/>
+    <Split name="&L;&SC;"/>
+    <Split name="&I;14"/>
+    <Split name="&L;&GP;"/>
+    <Split name="&L;&TT;"/>
+    <Split name="&L;&CR;"/>
+    <Split name="&L;&UW;"/>
+    <Split name="&B;&UW;"/>
+    <Split name="&L;&ES;"/>
+    <Split name="&I;16"/>
+    <Split name="&I;12"/>
+    <Split name="&I;40"/>
+    <Split name="&I;13"/>
+    <Split name="&I;22"/>
+    <Split name="&I;55"/>
+    <Split name="&L;&RT;"/>
+    <Split name="&B;&RT;"/>
+    <Split name="&I;15"/>
+    <Split name="&I;21"/>
+    <Split name="&I;51"/>
+    <Split name="&I;11"/>
+    <Split name="&C;PhantomIntroCutscene"/>
+    <Split name="&B;&EN;"/>
+  </Preset>
+</Presets>

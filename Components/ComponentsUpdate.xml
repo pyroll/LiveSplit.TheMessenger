@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<updates>
+  <update version="2.0.0">
+    <files>
+      <file path="Components/LiveSplit.TheMessenger.dll" status="added"/>
+      <file path="Components/LiveSplit.RuntimeText.dll" status="added"/>
+    </files>
+    <changelog>
+      <change>Initial Rework</change>
+    </changelog>
+  </update>
+</updates>

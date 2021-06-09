@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE Splits [
+  <!ENTITY L "Level_">
+  <!ENTITY B "Boss_">
+  <!ENTITY C "Cutscene_">
+  <!ENTITY I "Inventory_">
+  <!ENTITY S "Seal_">
+  <!ENTITY CP "Checkpoint_">
+  
+  <!ENTITY N_V "Ninja Village">
+  <!ENTITY A_H "Autumn Hills"><!ENTITY AH "02_AutumnHills">
+  <!ENTITY F_T "Forlorn Temple"><!ENTITY FT "03_ForlornTemple">
+  <!ENTITY C_C "Catacombs"><!ENTITY CC "04_Catacombs">
+  <!ENTITY B_C "Bamboo Creek"><!ENTITY BC "06_A_BambooCreek">
+  <!ENTITY H_G "Howling Grotto"><!ENTITY HG "05_A_HowlingGrotto">
+  <!ENTITY Q_M "Quillshroom Marsh"><!ENTITY QM "07_QuillshroomMarsh">
+  <!ENTITY S_C "Searing Crags"><!ENTITY SC "08_SearingCrags">
+  <!ENTITY G_P "Glacial Peak"><!ENTITY GP "09_A_GlacialPeak">
+  <!ENTITY T_T "Tower Of Time"><!ENTITY TT "10_A_TowerOfTime">
+  <!ENTITY C_R "Cloud Ruins"><!ENTITY CR "11_A_CloudRuins">
+  <!ENTITY U_W "UnderWorld"><!ENTITY UW "12_UnderWorld">
+  <!ENTITY D_C "Dark Cave"><!ENTITY DC "04_B_DarkCave">
+  <!ENTITY R_T "Riviere Turquoise"><!ENTITY RT "04_C_RiviereTurquoise">
+  <!ENTITY S_S "Sunken Shrine"><!ENTITY SS "05_B_SunkenShrine">
+  <!ENTITY E_S "Elemental Skylands"><!ENTITY ES "09_B_ElementalSkylands">
+  <!ENTITY C_F "Corrupted Future"><!ENTITY CF "14_CorruptedFuture">
+  <!ENTITY M_B "Music Box"><!ENTITY MB "11_B_MusicBox">
+  <!ENTITY E_N "Ending"><!ENTITY EN "Ending">
+  <!ENTITY O_S "Open Sea"><!ENTITY OS "15_Surf">
+  <!ENTITY V_S "Voodkin Shore"><!ENTITY VS "16_Beach">
+  <!ENTITY F_M "Fire Mountain"><!ENTITY FM "17_Volcano">
+  <!ENTITY V_H "Voodoo Heart"><!ENTITY VH "18_Volcano_Chase">
+  
+  <!ENTITY splits "Splits when ">
+  <!ENTITY level "&splits;entering ">
+  <!ENTITY boss "&splits;beating ">
+  <!ENTITY preFight "&splits;the pre-fight cutscene ends">
+  <!ENTITY postFight "&splits;the post-fight cutscene ends">
+  <!ENTITY portal "&splits;the portal opening cutscene ends">
+  <!ENTITY item "&splits;obtaining the ">
+  <!ENTITY buy "&splits;buying the ">
+  <!ENTITY catch "&splits;catching the ">
+  <!ENTITY checkpoint "&splits;triggering the Checkpoint ">
+]>
+<Splits>
+  <Parent name="Levels" text="Levels">
+    <Empty name="L_AH" text=" - - &A_H; - - "/>
+    <Split name="&L;&AH;" text="Enter &A_H;" tip="&level;&A_H; for the first time"/>
+    <Split name="&B;&AH;" text="Beat Leaf Golem" tip="&boss;the Leaf Golem" ico="bossLeaf.png"/>
+    <Split name="&C;LeafGolemIntroCutScene" text="Leaf Golem Intro Fight Cutscene" tip="&preFight;" ico="bossLeaf.png"/>
+    <Split name="&C;LeafGolemOutroCutScene" text="Leaf Golem Outro Fight Cutscene" tip="&postFight;" ico="bossLeaf.png"/>
+
+    <Empty name="L_FT" text=" - - &F_T; - - "/>
+    <Split name="&L;&FT;" text="Enter &F_T;" tip="&level;&F_T; for the first time"/>
+    <Split name="&C;ForlonTempleBossIntroCutscene" text="Demon King Intro Fight Cutscene" tip="&preFight;" ico="bossKing.png"/>
+    <Split name="&C;ForlonTempleBossOutroCutscene" text="Demon King Outro Fight Cutscene" tip="&postFight;" ico="bossKing.png"/>
+
+    <Empty name="L_CC" text=" - - &C_C; - - "/>
+    <Split name="&L;&CC;" text="Enter &C_C;" tip="&level;&C_C; for the first time"/>
+    <Split name="&B;&CC;" text="Beat Ruxxtin" tip="&boss;Ruxxtin" ico="bossRuxxtin.png"/>
+    <Split name="&C;NecromancerIntroCutscene" text="Ruxxtin Intro Fight Cutscene" tip="&preFight;" ico="bossRuxxtin.png"/>
+    <Split name="&C;NecromancerOutroCutscene" text="Ruxxtin Outro Fight Cutscene" tip="&postFight;" ico="bossRuxxtin.png"/>
+
+    <Empty name="L_BC" text=" - - &B_C; - - "/>
+    <Split name="&L;&BC;" text="Enter &B_C;" tip="&level;&B_C; for the first time"/>
+
+    <Empty name="L_HG" text=" - - &H_G; - - "/>
+    <Split name="&L;&HG;" text="Enter &H_G;" tip="&level;&H_G; for the first time"/>
+    <Split name="&B;&HG;" text="Beat Emerald Golem" tip="&boss;the Emerald Golem" ico="bossEmerald.png"/>
+    <Split name="&C;HowlingGrottoBossIntroCutscene" text="Emerald Golem Intro Fight Cutscene" tip="&preFight;" ico="bossEmerald.png"/>
+    <Split name="&C;HowlingGrottoBossOutroCutscene" text="Emerald Golem Outro Fight Cutscene" tip="&postFight;" ico="bossEmerald.png"/>
+
+    <Empty name="L_QM" text=" - - &Q_M; - - "/>
+    <Split name="&L;&QM;" text="Enter &Q_M;" tip="&level;&Q_M; for the first time"/>
+    <Split name="&B;&QM;" text="Beat Queen Of Quills" tip="&boss;the Queen Of Quills" ico="bossQueen.png"/>
+    <Split name="&C;QuillshroomMarshBossIntroCutscene" text="Queen Of Quills Intro Fight Cutscene" tip="&preFight;" ico="bossQueen.png"/>
+    <Split name="&C;QuillshroomMarshBossOutroCutscene" text="Queen Of Quills Outro Fight Cutscene" tip="&postFight;" ico="bossQueen.png"/>
+    <Split name="&C;DecurseQueenCutscene" text="Decurse Queen Cutscene" tip="Splits when the decurse Queen cutscene ends"/>
+
+    <Empty name="L_SC" text=" - - &S_C; - - "/>
+    <Split name="&L;&SC;" text="Enter &S_C;" tip="&level;&S_C; for the first time"/>
+    <Split name="&B;&SC;" text="Beat Colos &amp; Suses" tip="&boss;Colos &amp; Suses" ico="bossColosSuses.png"/>
+    <Split name="&C;SearingCragsBossIntroCutscene" text="Colossuses Intro Fight Cutscene" tip="&preFight;" ico="bossColosSuses.png"/>
+    <Split name="&C;SearingCragsPortalOpeningCutscene" text="Portal Opening Cutscene" tip="&portal;"/>
+    <Split name="&C;SearingCragsGivePowerThistleCutscene" text="Give Power Thistle Cutscene" tip="Splits when the cutscene of the Power Thistle delivery ends"/>
+
+    <Empty name="L_GP" text=" - - &G_P; - - "/>
+    <Split name="&L;&GP;" text="Enter &G_P;" tip="&level;&G_P; for the first time"/>
+    <Split name="&C;CloudRuinsStaffTeleportEntranceCutscene" text="&G_P; to &C_R; (Ruxxtin's staff) Cutscene" tip="Splits when the cutscene of the travel from &G_P; to &C_R; ends"/>
+
+    <Empty name="L_TT" text=" - - &T_T; - - "/>
+    <Split name="&L;&TT;" text="Enter &T_T;" tip="&level;&T_T; for the first time"/>
+    <Split name="&B;&TT;" text="Beat Arcane Golem" tip="&boss;the Arcane Golem" ico="bossArcane.png"/>
+    <Split name="&C;TowerOfTimeBossIntroCutscene" text="Arcane Golem Intro Fight Cutscene" tip="&preFight;" ico="bossArcane.png"/>
+    <Split name="&C;TowerOfTimeBossOutroCutscene" text="Arcane Golem Outro Fight Cutscene" tip="&postFight;" ico="bossArcane.png"/>
+
+    <Empty name="L_CR" text=" - - &C_R; - - "/>
+    <Split name="&L;&CR;" text="Enter &C_R;" tip="&level;&C_R; for the first time"/>
+    <Split name="&B;&CR;" text="Beat Manfred" tip="&boss;Manfred" ico="bossManfred.png"/>
+    <Split name="&C;ManfredBossIntroCutscene" text="Manfred Intro Fight Cutscene" tip="&preFight;" ico="bossManfred.png"/>
+
+    <Empty name="L_UW" text=" - - &U_W; - - "/>
+    <Split name="&L;&UW;" text="Enter &U_W;" tip="&level;&U_W; for the first time"/>
+    <Split name="&B;&UW;" text="Beat Demon General" tip="&boss;the Demon General" ico="bossGeneral.png"/>
+    <Split name="&C;DemonGeneralBossIntroCutscene" text="Demon General Intro Fight Cutscene" tip="&preFight;" ico="bossGeneral.png"/>
+    <Split name="&C;DemonGeneralBossOutroCutscene" text="Demon General Outro Fight Cutscene" tip="&postFight;" ico="bossGeneral.png"/>
+
+    <Empty name="L_TTHQ" text=" - - &T_T; HQ - - "/>
+    <Split name="&C;PortalOpeningCutscene" text="Portal Opening Cutscene" tip="&portal;"/>
+
+    <Empty name="L_DC" text=" - - &D_C; - - "/>
+    <Split name="&L;&DC;" text="Enter &D_C;" tip="&level;&D_C; for the first time"/>
+
+    <Empty name="L_RT" text=" - - &R_T; - - "/>
+    <Split name="&L;&RT;" text="Enter &R_T;" tip="&level;&R_T; for the first time"/>
+    <Split name="&B;&RT;" text="Beat Butterfly Matriarch" tip="&boss;the Butterfly Matriarch" ico="bossButterfly.png"/>
+    <Split name="&C;RiviereTurquoiseBossIntroCutscene" text="Butterfly Matriarch Intro Fight Cutscene" tip="&preFight;" ico="bossButterfly.png"/>
+    <Split name="&C;RiviereTurquoisePortalOpeningCutscene" text="Portal Opening Cutscene" tip="&portal;"/>
+
+    <Empty name="L_SS" text=" - - &S_S; - - "/>
+    <Split name="&L;&SS;" text="Enter &S_S;" tip="&level;&S_S; for the first time"/>
+    <Split name="&C;SunkenShrinePortalOpeningCutscene" text="Portal Opening Cutscene" tip="&portal;"/>
+    <Split name="&C;DropCrestsCutscene" text="Drop Crest Cutscene" tip="Splits when the drop crests cutscene ends"/>
+
+    <Empty name="L_ES" text=" - - &E_S; - - "/>
+    <Split name="&L;&ES;" text="Enter &E_S;" tip="&level;&E_S; for the first time"/>
+    <Split name="&B;&ES;" text="Beat Clockwork Concierge" ico="bossClockwork.png"/>
+    <Split name="&C;ElementalSkylandsBossIntroCutscene" text="Clockwork Concierge Intro Fight Cutscene" tip="&preFight;" ico="bossClockwork.png"/>
+    <Split name="&C;SkylandsToGlacialPeakFirstTimeCutscene" text="&E_S; to &G_P; (Manfred) Cutscene"/>
+
+    <Empty name="L_CF" text=" - - &C_F; - - "/>
+    <Split name="&L;&CF;" text="Enter &C_F;" tip="&level;&C_F; for the first time"/>
+
+    <Empty name="L_MB" text=" - - &M_B; - - "/>
+    <Split name="&L;&MB;" text="Enter &M_B;" tip="&level;&M_B; for the first time"/>
+    <Split name="&B;&MB;" text="Beat Phantom" tip="&boss;Phantom" ico="bossPhantom.png"/>
+    <Split name="&C;PhantomIntroCutscene" text="Phantom Intro Fight Cutscene" tip="&preFight;" ico="bossPhantom.png"/>
+
+    <Empty name="L_EN" text=" - - &E_N; - - "/>
+    <Split name="&L;&EN;" text="Enter &E_N;" tip="&level;&E_N; for the first time"/>
+    <Split name="&B;&EN;" text="Beat Mask" tip="&boss;the Mask"/>
+  </Parent>
+  
+
+  <Parent name="LevelsDLC1" text="Levels (Picnic Panic)">
+    <Empty name="L_OS" text=" - - &O_S; - - "/>
+    <Split name="&L;&OS;" text="Enter &O_S;" tip="&level;&O_S; for the first time"/>
+    <Split name="&B;&OS;" text="Beat Octo" tip="&boss;Octo" ico="bossOcto.png"/>
+    <Split name="&C;SurfBossIntroCutscene" text="Octo Intro Fight Cutscene" tip="&preFight;" ico="bossOcto.png"/>
+
+    <Empty name="L_VS" text=" - - &V_S; - - "/>
+    <Split name="&L;&VS;" text="Enter &V_S;" tip="&level;&V_S; for the first time"/>
+    <Split name="&B;&VS;" text="Beat Totem" tip="&boss;the Totem" ico="bossEmerald.png"/>
+    <Split name="&C;TotemBossIntroCutscene" text="Totem Intro Fight Cutscene" tip="&preFight;" ico="bossEmerald.png"/>
+
+    <Empty name="L_FM" text=" - - &F_M; - - "/>
+    <Split name="&L;&FM;" text="Enter &F_M;" tip="&level;&F_M; for the first time"/>
+
+    <Empty name="L_VH" text=" - - &V_H; - - "/>
+    <Split name="&L;&VH;" text="Enter &V_H;" tip="&level;&V_H; for the first time"/>
+    <Split name="&B;&VH;" text="Beat Barma" tip="&boss;Barma" ico="bossGeneral.png"/>
+    <Split name="&C;StartFinalPPBossCutscene" text="Barma Intro Fight Cutscene" tip="&preFight;" ico="bossGeneral.png"/>
+    <Split name="&C;RaceWinCutscene" text="Race Win Cutscene" tip="Splits when the race cutscene ends"/>
+  </Parent>
+
+  
+  <Parent name="Inventory" text="Inventory">
+    <Empty name="Items" text=" - - Items - - "/>
+    <Split name="&I;50" text="Scroll" tip="&item;Scroll" ico="itemScroll.png"/>
+    <Split name="&I;7" text="Climbing claws" tip="&item;Climbing claws" ico="itemClimbingClaws.png"/>
+    <Split name="&I;6" text="Wingsuit" tip="&item;Wingsuit" ico="itemWingsuit.png"/>
+    <Split name="&I;4" text="Rope dart" tip="&item;Rope dart" ico="itemRopeDart.png"/>
+    <Split name="&I;3" text="Scroll upgrade (Map)" tip="&item;Scroll upgrade (Map)" ico="itemMap.png"/>
+    <Split name="&I;19" text="Magic Seashell" tip="&item;Magic Seashell" ico="itemSeashell.png"/>
+    <Split name="&I;25" text="Power Thistle" tip="&item;Power Thistle" ico="itemThistle.png"/>
+    <Split name="&I;56" text="Astral Seed" tip="&item;Astral Seed" ico="itemSeed.png"/>
+    <Split name="&I;57" text="Astral Tea Leaves" tip="&item;Astral Tea Leaves" ico="itemLeaf.png"/>
+    <Split name="&I;55" text="Ruxxtin's Amulet" tip="&item;Ruxxtin's Amulet" ico="itemAmulet.png"/>
+    <Split name="&I;29" text="Candle" tip="&item;Candle" ico="itemCandle.png"/>
+    <Split name="&I;60" text="Magic Firefly" tip="&item;Magic Firefly" ico="itemFirefly.png"/>
+    <Split name="&I;40" text="Lightfoot Tabi" tip="&item;Lightfoot Tabi" ico="itemTabi.png"/>
+    <Split name="&I;58" text="Sun Crest" tip="&item;Sun Crest" ico="itemCrestSun.png"/>
+    <Split name="&I;59" text="Moon Crest" tip="&item;Moon Crest" ico="itemCrestMoon.png"/>
+    <Split name="&I;51" text="Demon King's Crown" tip="&item;Demon King's Crown" ico="itemCrown.png"/>
+    <Split name="UnlockWindmill" text="Windmill Shuriken" tip="&item;Windmill Shuriken" ico="itemWindmill.png"/>
+
+    <Empty name="Abilities 8" text=" - - Abilities 8bit - - "/>
+    <Split name="&I;26" text="Energy shuriken" tip="&buy;Energy shuriken" ico="shopShuriken.png"/>
+    <Split name="&I;64" text="Strike of the Ninja" tip="&buy;Strike of the Ninja" ico="shopStrikeNinja.png"/>
+    <Split name="&I;2" text="Karuta plates" tip="&buy;Karuta plates" ico="shopKarutaPlates.png"/>
+    <Split name="&I;37" text="Second wind" tip="&buy;Second wind" ico="shopSecondWind.png"/>
+    <Split name="&I;61" text="Serendipitous minds" tip="&buy;Serendipitous minds" ico="shopSerendipitousMinds.png"/>
+    <Split name="&I;62" text="Serendipitous bodies" tip="&buy;Serendipitous bodies" ico="shopSerendipitousBodies.png"/>
+    <Split name="&I;34" text="Path of resilience" tip="&buy;Path of resilience" ico="shopPathOfResilience.png"/>
+    <Split name="&I;2_2" text="Kusari jacket" tip="&buy;Kusari jacket" ico="shopKusariJacket.png"/>
+    <Split name="&I;38" text="Prepared mind" tip="&buy;Prepared mind" ico="shopPreparedMind.png"/>
+    <Split name="&I;39" text="Currents master" tip="&buy;Currents master" ico="shopCurrentsMaster.png"/>
+    <Split name="&I;43" text="Meditation" tip="&buy;Meditation" ico="shopMeditation.png"/>
+    <Split name="&I;41" text="Aerobatics warrior" tip="&buy;Aerobatics warrior" ico="shopAerobatics.png"/>
+    <Split name="&I;49" text="Devil's due" tip="&buy;Devil's due" ico="shopDevilsDue.png"/>
+
+    <Empty name="Abilities 16" text=" - - Abilities 16bit - - "/>
+    <Split name="&I;63" text="Demon's bane" tip="&buy;Demon's bane" ico="shopDemonsBane.png"/>
+    <Split name="&I;42" text="Rejuvenative spirit" tip="&buy;Rejuvenative spirit" ico="shopRejuvenativeSpirit.png"/>
+    <Split name="&I;38_2" text="Centered mind" tip="&buy;Centered mind" ico="shopCenteredMind.png"/>
+    <Split name="&I;68" text="Time sense" tip="&buy;Time sense" ico="shopTimeSense.png"/>
+    <Split name="&I;69" text="Power sense" tip="&buy;Power sense" ico="shopPowerSense.png"/>
+    <Split name="&I;70" text="Focused power sense" tip="&buy;Focused power sense" ico="shopFocusedPowerSense.png"/>
+
+    <Empty name="Music Notes" text=" - - Music Notes - - "/>
+    <Split name="&I;12" text="Key of Hope" tip="&catch;Key of Hope" ico="keyHope.png"/>
+    <Split name="&I;15" text="Key of Chaos" tip="&catch;Key of Choas" ico="keyChaos.png"/>
+    <Split name="&I;13" text="Key of Love" tip="&catch;Key of Love" ico="keyLove.png"/>
+    <Split name="&I;16" text="Key of Symbiosis" tip="&catch;Key of Symbiosis" ico="keySymbiosis.png"/>
+    <Split name="&I;11" text="Key of Courage" tip="&catch;Key of Courage" ico="keyCourage.png"/>
+    <Split name="&I;14" text="Key of Strength" tip="&catch;Key of Strength" ico="keyStrength.png"/>
+
+    <Empty name="Phobekins" text=" - - Phobekins - - "/>
+    <Split name="&I;20" text="Necro" ico="phobNecro.png" tip="Splits when rescuing Necro in &C_C;"/>
+    <Split name="&I;22" text="Claustro" ico="phobClaustro.png" tip="Splits when rescuing Claustro in &B_C;"/>
+    <Split name="&I;23" text="Pyro" ico="phobPyro.png" tip="Splits when rescuing Pyro in &U_W;"/>
+    <Split name="&I;21" text="Acro" ico="phobAcro.png" tip="Splits when rescuing Acro in &C_R;"/>
+  </Parent>
+
+
+  <Parent name="Power Seals" text="Power Seals">
+    <Empty name="S_NV" text=" - - &N_V; - - "/>
+    <Split name="&S;-436-404-44-28" text="&N_V; Seal 1" tip="&catch;Seal 1 in &N_V;" ico="seal.png" img="sealNV1.png"/>
+
+    <Empty name="S_AH" text=" - - &A_H; - - "/>
+    <Split name="&S;-52-20-60-44" text="&A_H; Seal 1" tip="&catch;Seal 1 in &A_H;" ico="seal.png" img="sealAH1.png"/>
+    <Split name="&S;556588-44-28" text="&A_H; Seal 2" tip="&catch;Seal 2 in &A_H;" ico="seal.png" img="sealAH2.png"/>
+    <Split name="&S;748780-76-60" text="&A_H; Seal 3" tip="&catch;Seal 3 in &A_H;" ico="seal.png" img="sealAH3.png"/>
+    <Split name="&S;748780-108-76" text="&A_H; Seal 4" tip="&catch;Seal 4 in &A_H;" ico="seal.png" img="sealAH4.png"/>
+
+    <Empty name="S_FT" text=" - - &F_T; - - "/>
+    <Split name="&S;140172100164" text="&F_T; Seal 1" tip="&catch;Seal 1 in &F_T;" ico="seal.png" img="sealFT1.png"/>
+    <Split name="&S;172268-284" text="&F_T; Seal 2" tip="&catch;Seal 2 in &F_T;" ico="seal.png" img="sealFT2.png"/>
+
+    <Empty name="S_CC" text=" - - &C_C; - - "/>
+    <Split name="&S;236268-44-28" text="&C_C; Seal 1" tip="&catch;Seal 1 in &C_C;" ico="seal.png" img="sealCC1.png"/>
+    <Split name="&S;492524-44-28" text="&C_C; Seal 2" tip="&catch;Seal 2 in &C_C;" ico="seal.png" img="sealCC2.png"/>
+    <Split name="&S;556588-60-44" text="&C_C; Seal 3" tip="&catch;Seal 3 in &C_C;" ico="seal.png" img="sealCC3.png"/>
+
+    <Empty name="S_BC" text=" - - &B_C; - - "/>
+    <Split name="&S;-84-52-28-12" text="&B_C; Seal 1" tip="&catch;Seal 1 in &B_C;" ico="seal.png" img="sealBC1.png"/>
+    <Split name="&S;172236-44-28" text="&B_C; Seal 2" tip="&catch;Seal 2 in &B_C;" ico="seal.png" img="sealBC2.png"/>
+    <Split name="&S;300332-1236" text="&B_C; Seal 3" tip="&catch;Seal 3 in &B_C;" ico="seal.png" img="sealBC3.png"/>
+
+    <Empty name="S_HG" text=" - - &H_G; - - "/>
+    <Split name="&S;108140-28-12" text="&H_G; Seal 1" tip="&catch;Seal 1 in &H_G;" ico="seal.png" img="sealHG1.png"/>
+    <Split name="&S;300332-92-76" text="&H_G; Seal 2" tip="&catch;Seal 2 in &H_G;" ico="seal.png" img="sealHG2.png"/>
+    <Split name="&S;460492-172-156" text="&H_G; Seal 3" tip="&catch;Seal 3 in &H_G;" ico="seal.png" img="sealHG3.png"/>
+
+    <Empty name="S_QM" text=" - - &Q_M; - - "/>
+    <Split name="&S;204236-28-12" text="&Q_M; Seal 1" tip="&catch;Seal 1 in &Q_M;" ico="seal.png" img="sealQM1.png"/>
+    <Split name="&S;652684-60-28" text="&Q_M; Seal 2" tip="&catch;Seal 2 in &Q_M;" ico="seal.png" img="sealQM2.png"/>
+    <Split name="&S;940972-28-12" text="&Q_M; Seal 3" tip="&catch;Seal 3 in &Q_M;" ico="seal.png" img="sealQM3.png"/>
+
+    <Empty name="S_SC" text=" - - &S_C; - - "/>
+    <Split name="&S;761085268" text="&S_C; Seal 1" tip="&catch;Seal 1 in &S_C;" ico="seal.png" img="sealSC1.png"/>
+    <Split name="&S;300332196212" text="&S_C; Seal 2" tip="&catch;Seal 2 in &S_C;" ico="seal.png" img="sealSC2.png"/>
+    <Split name="&S;364396292308" text="&S_C; Seal 3" tip="&catch;Seal 3 in &S_C;" ico="seal.png" img="sealSC3.png"/>
+
+    <Empty name="S_GP" text=" - - &G_P; - - "/>
+    <Split name="&S;140172-492-476" text="&G_P; Seal 1" tip="&catch;Seal 1 in &G_P;" ico="seal.png" img="sealGP1.png"/>
+    <Split name="&S;236268-156-140" text="&G_P; Seal 2" tip="&catch;Seal 2 in &G_P;" ico="seal.png" img="sealGP2.png"/>
+    <Split name="&S;236268-396-380" text="&G_P; Seal 3" tip="&catch;Seal 3 in &G_P;" ico="seal.png" img="sealGP3.png"/>
+
+    <Empty name="S_TT" text=" - - &T_T; - - "/>
+    <Split name="&S;-84-522036" text="&T_T; Seal 1" tip="&catch;Seal 1 in &T_T;" ico="seal.png" img="sealTT1.png"/>
+    <Split name="&S;-52-20116132" text="&T_T; Seal 2" tip="&catch;Seal 2 in &T_T;" ico="seal.png" img="sealTT2.png"/>
+    <Split name="&S;7610852116" text="&T_T; Seal 3" tip="&catch;Seal 3 in &T_T;" ico="seal.png" img="sealTT3.png"/>
+
+    <Empty name="S_CR" text=" - - &C_R; - - "/>
+    <Split name="&S;-148-116420" text="&C_R; Seal 1" tip="&catch;Seal 1 in &C_R;" ico="seal.png" img="sealCR1.png"/>
+    <Split name="&S;108140-44-28" text="&C_R; Seal 2" tip="&catch;Seal 2 in &C_R;" ico="seal.png" img="sealCR2.png"/>
+    <Split name="&S;748780-44-28" text="&C_R; Seal 3" tip="&catch;Seal 3 in &C_R;" ico="seal.png" img="sealCR3.png"/>
+    <Split name="&S;11321164-124" text="&C_R; Seal 4" tip="&catch;Seal 4 in &C_R;" ico="seal.png" img="sealCR4.png"/>
+
+    <Empty name="S_UW" text=" - - &U_W; - - "/>
+    <Split name="&S;-276-244-444" text="&U_W; Seal 1" tip="&catch;Seal 1 in &U_W;" ico="seal.png" img="sealUW1.png"/>
+    <Split name="&S;-180-148-44-28" text="&U_W; Seal 2" tip="&catch;Seal 2 in &U_W;" ico="seal.png" img="sealUW2.png"/>
+    <Split name="&S;-180-148-60-44" text="&U_W; Seal 3" tip="&catch;Seal 3 in &U_W;" ico="seal.png" img="sealUW3.png"/>
+    <Split name="&S;-2012-124" text="&U_W; Seal 4" tip="&catch;Seal 4 in &U_W;" ico="seal.png" img="sealUW4.png"/>
+
+    <Empty name="S_RT" text=" - - &R_T; - - "/>
+    <Split name="&S;-180-1483668" text="&R_T; Seal 1" tip="&catch;Seal 1 in &R_T;" ico="seal.png" img="sealRT1.png"/>
+    <Split name="&S;460492-124-108" text="&R_T; Seal 2" tip="&catch;Seal 2 in &R_T;" ico="seal.png" img="sealRT2.png"/>
+    <Split name="&S;844876-284" text="&R_T; Seal 3" tip="&catch;Seal 3 in &R_T;" ico="seal.png" img="sealRT3.png"/>
+
+    <Empty name="S_SS" text=" - - &S_S; - - "/>
+    <Split name="&S;-148-116-124-60" text="&S_S; Seal 1" tip="&catch;Seal 1 in &S_S;" ico="seal.png" img="sealSS1.png"/>
+    <Split name="&S;204236-124" text="&S_S; Seal 2" tip="&catch;Seal 2 in &S_S;" ico="seal.png" img="sealSS2.png"/>
+    <Split name="&S;172268-188-172" text="&S_S; Seal 3" tip="&catch;Seal 3 in &S_S;" ico="seal.png" img="sealSS3.png"/>
+
+    <Empty name="S_ES" text=" - - &E_S; - - "/>
+    <Split name="&S;-52-20420436" text="&E_S; Seal 1" tip="&catch;Seal 1 in &E_S;" ico="seal.png" img="sealES1.png"/>
+    <Split name="&S;18361868372388" text="&E_S; Seal 2" tip="&catch;Seal 2 in &E_S;" ico="seal.png" img="sealES2.png"/>
+    <Split name="&S;28602892356388" text="&E_S; Seal 3" tip="&catch;Seal 3 in &E_S;" ico="seal.png" img="sealES3.png"/>
+  </Parent>
+
+
+  <Parent name="Checkpoints" text="Checkpoints">
+    <Empty name="CP_NV" text=" - - &N_V; - - "/>
+    <Split name="&CP;&AH;_0" text="&A_H; Checkpoint 0" tip="&checkpoint;0 in &A_H;" ico="checkpoint.png"/>
+    <Split name="&CP;&AH;_1" text="&A_H; Checkpoint 1" tip="&checkpoint;1 in &A_H;" ico="checkpoint.png"/>
+    <Split name="&CP;&AH;_2" text="&A_H; Checkpoint 2" tip="&checkpoint;2 in &A_H;" ico="checkpoint.png"/>
+    <Split name="&CP;&AH;_3" text="&A_H; Checkpoint 3" tip="&checkpoint;3 in &A_H;" ico="checkpoint.png"/>
+    <Split name="&CP;&AH;_4" text="&A_H; Checkpoint 4" tip="&checkpoint;4 in &A_H;" ico="checkpoint.png"/>
+    <Split name="&CP;&AH;_5" text="&A_H; Checkpoint 5" tip="&checkpoint;5 in &A_H;" ico="checkpoint.png"/>
+    <Split name="&CP;&AH;_6" text="&A_H; Checkpoint 6" tip="&checkpoint;6 in &A_H;" ico="checkpoint.png"/>
+    <Split name="&CP;&AH;_7" text="&A_H; Checkpoint 7" tip="&checkpoint;7 in &A_H;" ico="checkpoint.png"/>
+    <Split name="&CP;&AH;_8" text="&A_H; Checkpoint 8" tip="&checkpoint;8 in &A_H;" ico="checkpoint.png"/>
+
+    <Empty name="CP_FT" text=" - - &F_T; - - "/>
+    <Split name="&CP;&FT;_0" text="&F_T; Checkpoint 0" tip="&checkpoint;0 in &F_T;" ico="checkpoint.png"/>
+    <Split name="&CP;&FT;_1" text="&F_T; Checkpoint 1" tip="&checkpoint;1 in &F_T;" ico="checkpoint.png"/>
+    <Split name="&CP;&FT;_2" text="&F_T; Checkpoint 2" tip="&checkpoint;2 in &F_T;" ico="checkpoint.png"/>
+    <Split name="&CP;&FT;_3" text="&F_T; Checkpoint 3" tip="&checkpoint;3 in &F_T;" ico="checkpoint.png"/>
+    <Split name="&CP;&FT;_4" text="&F_T; Checkpoint 4" tip="&checkpoint;4 in &F_T;" ico="checkpoint.png"/>
+    <Split name="&CP;&FT;_5" text="&F_T; Checkpoint 5" tip="&checkpoint;5 in &F_T;" ico="checkpoint.png"/>
+    <Split name="&CP;&FT;_6" text="&F_T; Checkpoint 6" tip="&checkpoint;6 in &F_T;" ico="checkpoint.png"/>
+    <Split name="&CP;&FT;_7" text="&F_T; Checkpoint 7" tip="&checkpoint;7 in &F_T;" ico="checkpoint.png"/>
+    <Split name="&CP;&FT;_8" text="&F_T; Checkpoint 8" tip="&checkpoint;8 in &F_T;" ico="checkpoint.png"/>
+
+    <Empty name="CP_CC" text=" - - &C_C; - - "/>
+    <Split name="&CP;&CC;_0" text="&C_C; Checkpoint 0" tip="&checkpoint;0 in &C_C;" ico="checkpoint.png"/>
+    <Split name="&CP;&CC;_1" text="&C_C; Checkpoint 1" tip="&checkpoint;1 in &C_C;" ico="checkpoint.png"/>
+    <Split name="&CP;&CC;_2" text="&C_C; Checkpoint 2" tip="&checkpoint;2 in &C_C;" ico="checkpoint.png"/>
+    <Split name="&CP;&CC;_3" text="&C_C; Checkpoint 3" tip="&checkpoint;3 in &C_C;" ico="checkpoint.png"/>
+    <Split name="&CP;&CC;_4" text="&C_C; Checkpoint 4" tip="&checkpoint;4 in &C_C;" ico="checkpoint.png"/>
+
+    <Empty name="CP_BC" text=" - - &B_C; - - "/>
+    <Split name="&CP;&BC;_0" text="&B_C; Checkpoint 0" tip="&checkpoint;0 in &B_C;" ico="checkpoint.png"/>
+    <Split name="&CP;&BC;_1" text="&B_C; Checkpoint 1" tip="&checkpoint;1 in &B_C;" ico="checkpoint.png"/>
+    <Split name="&CP;&BC;_2" text="&B_C; Checkpoint 2" tip="&checkpoint;2 in &B_C;" ico="checkpoint.png"/>
+    <Split name="&CP;&BC;_3" text="&B_C; Checkpoint 3" tip="&checkpoint;3 in &B_C;" ico="checkpoint.png"/>
+    <Split name="&CP;&BC;_4" text="&B_C; Checkpoint 4" tip="&checkpoint;4 in &B_C;" ico="checkpoint.png"/>
+
+    <Empty name="CP_HG" text=" - - &H_G; - - "/>
+    <Split name="&CP;&HG;_0" text="&H_G; Checkpoint 0" tip="&checkpoint;0 in &H_G;" ico="checkpoint.png"/>
+    <Split name="&CP;&HG;_1" text="&H_G; Checkpoint 1" tip="&checkpoint;1 in &H_G;" ico="checkpoint.png"/>
+    <Split name="&CP;&HG;_2" text="&H_G; Checkpoint 2" tip="&checkpoint;2 in &H_G;" ico="checkpoint.png"/>
+    <Split name="&CP;&HG;_3" text="&H_G; Checkpoint 3" tip="&checkpoint;3 in &H_G;" ico="checkpoint.png"/>
+    <Split name="&CP;&HG;_4" text="&H_G; Checkpoint 4" tip="&checkpoint;4 in &H_G;" ico="checkpoint.png"/>
+
+    <Empty name="CP_QM" text=" - - &Q_M; - - "/>
+    <Split name="&CP;&QM;_0" text="&Q_M; Checkpoint 0" tip="&checkpoint;0 in &Q_M;" ico="checkpoint.png"/>
+    <Split name="&CP;&QM;_1" text="&Q_M; Checkpoint 1" tip="&checkpoint;1 in &Q_M;" ico="checkpoint.png"/>
+    <Split name="&CP;&QM;_2" text="&Q_M; Checkpoint 2" tip="&checkpoint;2 in &Q_M;" ico="checkpoint.png"/>
+    <Split name="&CP;&QM;_3" text="&Q_M; Checkpoint 3" tip="&checkpoint;3 in &Q_M;" ico="checkpoint.png"/>
+    <Split name="&CP;&QM;_4" text="&Q_M; Checkpoint 4" tip="&checkpoint;4 in &Q_M;" ico="checkpoint.png"/>
+    <Split name="&CP;&QM;_5" text="&Q_M; Checkpoint 5" tip="&checkpoint;5 in &Q_M;" ico="checkpoint.png"/>
+
+    <Empty name="CP_SC" text=" - - &S_C; - - "/>
+    <Split name="&CP;&SC;_0" text="&S_C; Checkpoint 0" tip="&checkpoint;0 in &S_C;" ico="checkpoint.png"/>
+    <Split name="&CP;&SC;_1" text="&S_C; Checkpoint 1" tip="&checkpoint;1 in &S_C;" ico="checkpoint.png"/>
+    <Split name="&CP;&SC;_2" text="&S_C; Checkpoint 2" tip="&checkpoint;2 in &S_C;" ico="checkpoint.png"/>
+    <Split name="&CP;&SC;_3" text="&S_C; Checkpoint 3" tip="&checkpoint;3 in &S_C;" ico="checkpoint.png"/>
+    <Split name="&CP;&SC;_4" text="&S_C; Checkpoint 4" tip="&checkpoint;4 in &S_C;" ico="checkpoint.png"/>
+    <Split name="&CP;&SC;_5" text="&S_C; Checkpoint 5" tip="&checkpoint;5 in &S_C;" ico="checkpoint.png"/>
+    <Split name="&CP;&SC;_6" text="&S_C; Checkpoint 6" tip="&checkpoint;6 in &S_C;" ico="checkpoint.png"/>
+    <Split name="&CP;&SC;_7" text="&S_C; Checkpoint 7" tip="&checkpoint;7 in &S_C;" ico="checkpoint.png"/>
+
+    <Empty name="CP_GP" text=" - - &G_P; - - "/>
+    <Split name="&CP;&GP;_0" text="&G_P; Checkpoint 0" tip="&checkpoint;0 in &G_P;" ico="checkpoint.png"/>
+    <Split name="&CP;&GP;_1" text="&G_P; Checkpoint 1" tip="&checkpoint;1 in &G_P;" ico="checkpoint.png"/>
+    <Split name="&CP;&GP;_2" text="&G_P; Checkpoint 2" tip="&checkpoint;2 in &G_P;" ico="checkpoint.png"/>
+    <Split name="&CP;&GP;_3" text="&G_P; Checkpoint 3" tip="&checkpoint;3 in &G_P;" ico="checkpoint.png"/>
+    <Split name="&CP;&GP;_4" text="&G_P; Checkpoint 4" tip="&checkpoint;4 in &G_P;" ico="checkpoint.png"/>
+    <Split name="&CP;&GP;_5" text="&G_P; Checkpoint 5" tip="&checkpoint;5 in &G_P;" ico="checkpoint.png"/>
+
+    <Empty name="CP_TT" text=" - - &T_T; - - "/>
+    <Split name="&CP;&TT;_0" text="&T_T; Checkpoint 0" tip="&checkpoint;0 in &T_T;" ico="checkpoint.png"/>
+    <Split name="&CP;&TT;_1" text="&T_T; Checkpoint 1" tip="&checkpoint;1 in &T_T;" ico="checkpoint.png"/>
+    <Split name="&CP;&TT;_2" text="&T_T; Checkpoint 2" tip="&checkpoint;2 in &T_T;" ico="checkpoint.png"/>
+    <Split name="&CP;&TT;_3" text="&T_T; Checkpoint 3" tip="&checkpoint;3 in &T_T;" ico="checkpoint.png"/>
+    <Split name="&CP;&TT;_4" text="&T_T; Checkpoint 4" tip="&checkpoint;4 in &T_T;" ico="checkpoint.png"/>
+    <Split name="&CP;&TT;_5" text="&T_T; Checkpoint 5" tip="&checkpoint;5 in &T_T;" ico="checkpoint.png"/>
+    <Split name="&CP;&TT;_6" text="&T_T; Checkpoint 6" tip="&checkpoint;6 in &T_T;" ico="checkpoint.png"/>
+    <Split name="&CP;&TT;_7" text="&T_T; Checkpoint 7" tip="&checkpoint;7 in &T_T;" ico="checkpoint.png"/>
+
+    <Empty name="CP_CR" text=" - - &C_R; - - "/>
+    <Split name="&CP;&CR;_0" text="&C_R; Checkpoint 0" tip="&checkpoint;0 in &C_R;" ico="checkpoint.png"/>
+    <Split name="&CP;&CR;_1" text="&C_R; Checkpoint 1" tip="&checkpoint;1 in &C_R;" ico="checkpoint.png"/>
+    <Split name="&CP;&CR;_2" text="&C_R; Checkpoint 2" tip="&checkpoint;2 in &C_R;" ico="checkpoint.png"/>
+    <Split name="&CP;&CR;_3" text="&C_R; Checkpoint 3" tip="&checkpoint;3 in &C_R;" ico="checkpoint.png"/>
+    <Split name="&CP;&CR;_4" text="&C_R; Checkpoint 4" tip="&checkpoint;4 in &C_R;" ico="checkpoint.png"/>
+    <Split name="&CP;&CR;_5" text="&C_R; Checkpoint 5" tip="&checkpoint;5 in &C_R;" ico="checkpoint.png"/>
+    <Split name="&CP;&CR;_6" text="&C_R; Checkpoint 6" tip="&checkpoint;6 in &C_R;" ico="checkpoint.png"/>
+    <Split name="&CP;&CR;_7" text="&C_R; Checkpoint 7" tip="&checkpoint;7 in &C_R;" ico="checkpoint.png"/>
+    <Split name="&CP;&CR;_8" text="&C_R; Checkpoint 8" tip="&checkpoint;8 in &C_R;" ico="checkpoint.png"/>
+    <Split name="&CP;&CR;_9" text="&C_R; Checkpoint 9" tip="&checkpoint;9 in &C_R;" ico="checkpoint.png"/>
+    <Split name="&CP;&CR;_10" text="&C_R; Checkpoint 10" tip="&checkpoint;10 in &C_R;" ico="checkpoint.png"/>
+
+    <Empty name="CP_UW" text=" - - &U_W; - - "/>
+    <Split name="&CP;&UW;_0" text="&U_W; Checkpoint 0" tip="&checkpoint;0 in &U_W;" ico="checkpoint.png"/>
+    <Split name="&CP;&UW;_1" text="&U_W; Checkpoint 1" tip="&checkpoint;1 in &U_W;" ico="checkpoint.png"/>
+    <Split name="&CP;&UW;_2" text="&U_W; Checkpoint 2" tip="&checkpoint;2 in &U_W;" ico="checkpoint.png"/>
+    <Split name="&CP;&UW;_3" text="&U_W; Checkpoint 3" tip="&checkpoint;3 in &U_W;" ico="checkpoint.png"/>
+    <Split name="&CP;&UW;_4" text="&U_W; Checkpoint 4" tip="&checkpoint;4 in &U_W;" ico="checkpoint.png"/>
+    <Split name="&CP;&UW;_5" text="&U_W; Checkpoint 5" tip="&checkpoint;5 in &U_W;" ico="checkpoint.png"/>
+    <Split name="&CP;&UW;_6" text="&U_W; Checkpoint 6" tip="&checkpoint;6 in &U_W;" ico="checkpoint.png"/>
+    <Split name="&CP;&UW;_7" text="&U_W; Checkpoint 7" tip="&checkpoint;7 in &U_W;" ico="checkpoint.png"/>
+
+    <Empty name="CP_RT" text=" - - &R_T; - - "/>
+    <Split name="&CP;&RT;_0" text="&R_T; Checkpoint 0" tip="&checkpoint;0 in &R_T;" ico="checkpoint.png"/>
+    <Split name="&CP;&RT;_1" text="&R_T; Checkpoint 1" tip="&checkpoint;1 in &R_T;" ico="checkpoint.png"/>
+    <Split name="&CP;&RT;_2" text="&R_T; Checkpoint 2" tip="&checkpoint;2 in &R_T;" ico="checkpoint.png"/>
+    <Split name="&CP;&RT;_3" text="&R_T; Checkpoint 3" tip="&checkpoint;3 in &R_T;" ico="checkpoint.png"/>
+    <Split name="&CP;&RT;_4" text="&R_T; Checkpoint 4" tip="&checkpoint;4 in &R_T;" ico="checkpoint.png"/>
+    <Split name="&CP;&RT;_5" text="&R_T; Checkpoint 5" tip="&checkpoint;5 in &R_T;" ico="checkpoint.png"/>
+    <Split name="&CP;&RT;_6" text="&R_T; Checkpoint 6" tip="&checkpoint;6 in &R_T;" ico="checkpoint.png"/>
+
+    <Empty name="CP_SS" text=" - - &S_S; - - "/>
+    <Split name="&CP;&SS;_0" text="&S_S; Checkpoint 0" tip="&checkpoint;0 in &S_S;" ico="checkpoint.png"/>
+    <Split name="&CP;&SS;_1" text="&S_S; Checkpoint 1" tip="&checkpoint;1 in &S_S;" ico="checkpoint.png"/>
+    <Split name="&CP;&SS;_2" text="&S_S; Checkpoint 2" tip="&checkpoint;2 in &S_S;" ico="checkpoint.png"/>
+    <Split name="&CP;&SS;_3" text="&S_S; Checkpoint 3" tip="&checkpoint;3 in &S_S;" ico="checkpoint.png"/>
+    <Split name="&CP;&SS;_4" text="&S_S; Checkpoint 4" tip="&checkpoint;4 in &S_S;" ico="checkpoint.png"/>
+    <Split name="&CP;&SS;_5" text="&S_S; Checkpoint 5" tip="&checkpoint;5 in &S_S;" ico="checkpoint.png"/>
+    <Split name="&CP;&SS;_6" text="&S_S; Checkpoint 6" tip="&checkpoint;6 in &S_S;" ico="checkpoint.png"/>
+    <Split name="&CP;&SS;_7" text="&S_S; Checkpoint 7" tip="&checkpoint;7 in &S_S;" ico="checkpoint.png"/>
+    <Split name="&CP;&SS;_8" text="&S_S; Checkpoint 8" tip="&checkpoint;8 in &S_S;" ico="checkpoint.png"/>
+
+    <Empty name="CP_ES" text=" - - &E_S; - - "/>
+    <Split name="&CP;&ES;_0" text="&E_S; Checkpoint 0" tip="&checkpoint;0 in &E_S;" ico="checkpoint.png"/>
+    <Split name="&CP;&ES;_1" text="&E_S; Checkpoint 1" tip="&checkpoint;1 in &E_S;" ico="checkpoint.png"/>
+    <Split name="&CP;&ES;_2" text="&E_S; Checkpoint 2" tip="&checkpoint;2 in &E_S;" ico="checkpoint.png"/>
+    <Split name="&CP;&ES;_3" text="&E_S; Checkpoint 3" tip="&checkpoint;3 in &E_S;" ico="checkpoint.png"/>
+    <Split name="&CP;&ES;_4" text="&E_S; Checkpoint 4" tip="&checkpoint;4 in &E_S;" ico="checkpoint.png"/>
+    <Split name="&CP;&ES;_5" text="&E_S; Checkpoint 5" tip="&checkpoint;5 in &E_S;" ico="checkpoint.png"/>
+    <Split name="&CP;&ES;_6" text="&E_S; Checkpoint 6" tip="&checkpoint;6 in &E_S;" ico="checkpoint.png"/>
+    <Split name="&CP;&ES;_7" text="&E_S; Checkpoint 7" tip="&checkpoint;7 in &E_S;" ico="checkpoint.png"/>
+    <Split name="&CP;&ES;_8" text="&E_S; Checkpoint 8" tip="&checkpoint;8 in &E_S;" ico="checkpoint.png"/>
+
+    <Empty name="CP_MB" text=" - - &M_B; - - "/>
+    <Split name="&CP;&MB;_0" text="&M_B; Checkpoint 0" tip="&checkpoint;0 in &M_B;" ico="checkpoint.png"/>
+    <Split name="&CP;&MB;_1" text="&M_B; Checkpoint 1" tip="&checkpoint;1 in &M_B;" ico="checkpoint.png"/>
+    <Split name="&CP;&MB;_2" text="&M_B; Checkpoint 2" tip="&checkpoint;2 in &M_B;" ico="checkpoint.png"/>
+    <Split name="&CP;&MB;_3" text="&M_B; Checkpoint 3" tip="&checkpoint;3 in &M_B;" ico="checkpoint.png"/>
+    <Split name="&CP;&MB;_4" text="&M_B; Checkpoint 4" tip="&checkpoint;4 in &M_B;" ico="checkpoint.png"/>
+    <Split name="&CP;&MB;_5" text="&M_B; Checkpoint 5" tip="&checkpoint;5 in &M_B;" ico="checkpoint.png"/>
+    <Split name="&CP;&MB;_6" text="&M_B; Checkpoint 6" tip="&checkpoint;6 in &M_B;" ico="checkpoint.png"/>
+    <Split name="&CP;&MB;_7" text="&M_B; Checkpoint 7" tip="&checkpoint;7 in &M_B;" ico="checkpoint.png"/>
+    <Split name="&CP;&MB;_8" text="&M_B; Checkpoint 8" tip="&checkpoint;8 in &M_B;" ico="checkpoint.png"/>
+    <Split name="&CP;&MB;_9" text="&M_B; Checkpoint 9" tip="&checkpoint;9 in &M_B;" ico="checkpoint.png"/>
+  </Parent>
+</Splits>
