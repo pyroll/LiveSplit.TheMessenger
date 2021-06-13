@@ -5,6 +5,8 @@
   <!ENTITY C "Cutscene_">
   <!ENTITY I "Inventory_">
   <!ENTITY S "Seal_">
+  <!ENTITY F "Feather_">
+  <!ENTITY M "Mask_">
   <!ENTITY CP "Checkpoint_">
   
   <!ENTITY N_V "Ninja Village">
@@ -300,6 +302,26 @@
     <Split name="&S;28602892356388" text="&E_S; Seal 3" tip="&catch;Seal 3 in &E_S;" ico="seal.png" img="sealES3.png"/>
   </Parent>
 
+
+  <Parent name="Voodoo Items" text="Voodoo Items">
+    <Empty name="Voodoo Feathers" text=" - - Voodoo Feathers - - "/>
+    <Split name="&F;0" text="First Feather" tip="&catch;first feather in &O_S;" ico="feather.png"/>
+    <Split name="&F;1" text="Second Feather" tip="&catch;second feather in &O_S;" ico="feather.png"/>
+    <Split name="&F;2" text="Third Feather" tip="&catch;third feather in &O_S;" ico="feather.png"/>
+    <Split name="&F;3" text="Last Feather" tip="&catch;last feather in &O_S;" ico="feather.png"/>
+
+    <Empty name="Voodoo Mask Pieces" text=" - - Voodoo Mask Pieces - - "/>
+    <Split name="&M;-404-372-44-12" text="Mask Piece Right Eye" tip="&catch;right eye in &V_S;" ico="maskRE.png" img="maskVS_RE.png"/>
+    <Split name="&M;-180-1482068" text="Mask Piece Lower Mouth" tip="&catch;lower mouth in &V_S;" ico="maskLM.png" img="maskVS_LM.png"/>
+    <Split name="&M;-116-522036" text="Mask Piece Left Eyebrow" tip="&catch;left eyebrow in &V_S;" ico="maskLEb.png" img="maskVS_LEb.png"/>
+    <Split name="&M;620652436" text="Mask Piece Upper Mouth" tip="&catch;upper mouth in &V_S;" ico="maskUM.png" img="maskVS_UM.png"/>
+    <Split name="&M;4285243652" text="Mask Piece Left Eye" tip="&catch;left eye in &V_S;" ico="maskLE.png" img="maskVS_LE.png"/>
+    <Split name="&M;-212-11668100" text="Mask Piece Right Eyebrow" tip="&catch;right eyebrow in &F_M;" ico="maskREb.png" img="maskFM_REb.png"/>
+    <Split name="&M;-372-276196212" text="Mask Piece Chin" tip="&catch;chin in &F_M;" ico="maskC.png" img="maskFM_C.png"/>
+    <Split name="&M;-468-404276324" text="Mask Piece Left Cheek" tip="&catch;left cheek in &F_M;" ico="maskLC.png" img="maskFM_LC.png"/>
+    <Split name="&M;-276-244372420" text="Mask Piece Nose" tip="&catch;nose in &F_M;" ico="maskN.png" img="maskFM_N.png"/>
+    <Split name="&M;-52-20404436" text="Mask Piece Right Cheek" tip="&catch;right cheek in &F_M;" ico="maskRC.png" img="maskFM_RC.png"/>
+  </Parent>
 
   <Parent name="Checkpoints" text="Checkpoints">
     <Empty name="CP_NV" text=" - - &N_V; - - "/>

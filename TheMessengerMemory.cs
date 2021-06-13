@@ -19,6 +19,10 @@ namespace LiveSplit.TheMessenger {
         public Pointer<int> CutscenesCount { get; private set; }
         public Pointer<IntPtr> SealsArray { get; private set; }
         public Pointer<int> SealsCount { get; private set; }
+        public Pointer<IntPtr> MasksArray { get; private set; }
+        public Pointer<int> MasksCount { get; private set; }
+        public Pointer<IntPtr> FeathersArray { get; private set; }
+        public Pointer<int> FeathersCount { get; private set; }
         public Pointer<bool> UseWindmill { get; private set; }
 
         public Pointer<IntPtr> InventoryDict { get; private set; }
@@ -31,8 +35,11 @@ namespace LiveSplit.TheMessenger {
         public Pointer<bool> DlcSelection { get; private set; }
 
         public StringPointer RoomKey { get; private set; }
+
         private int bossesDefeatedOffset = 0;
         private int cutscenesPlayedOffset = 0;
+        private int feathersCollectedOffset = 0;
+        private int maskPiecesOffset = 0;
 
         private UnityHelperTask unityTask;
 
@@ -71,6 +78,14 @@ namespace LiveSplit.TheMessenger {
             SealsArray = ptrFactory.Make<IntPtr>(Progression, sealOffset, 0x10);
             SealsCount = ptrFactory.Make<int>(Progression, sealOffset, 0x18);
 
+            feathersCollectedOffset = unity.GetFieldOffset(progClass, "feathersCollected");
+            FeathersArray = ptrFactory.Make<IntPtr>(Progression, feathersCollectedOffset, 0x10);
+            FeathersCount = ptrFactory.Make<int>(Progression, feathersCollectedOffset, 0x18);
+
+            maskPiecesOffset = unity.GetFieldOffset(progClass, "maskPiecesCollected");
+            MasksArray = ptrFactory.Make<IntPtr>(Progression, maskPiecesOffset, 0x10);
+            MasksCount = ptrFactory.Make<int>(Progression, maskPiecesOffset, 0x18);
+
             UseWindmill = ptrFactory.Make<bool>(Progression, unity.GetFieldOffset(progClass, "useWindmillShuriken"));
 
             InventoryDict = ptrFactory.Make<IntPtr>("InventoryManager", "instance", "itemQuantityByItemId", 0x20);
@@ -86,7 +101,7 @@ namespace LiveSplit.TheMessenger {
             QuarbleAnim = QuarbleInDone = null;
 
             logger.Log(ptrFactory.ToString());
-
+                
             unityTask = null;
         }
 
@@ -102,6 +117,18 @@ namespace LiveSplit.TheMessenger {
 
         public string ReadLastSeal() {
             return ReadStringFromArray(SealsArray.New, SealsCount.New);
+        }
+
+        public string ReadLastFeather() {
+            return ReadFromArray<int>(FeathersArray.New, FeathersCount.New).ToString();
+        }
+
+        public string ReadLastMask() {
+            return ReadStringFromArray(MasksArray.New, MasksCount.New);
+        }
+
+        private unsafe T ReadFromArray<T>(IntPtr startArray, int count) where T : unmanaged {
+            return game.Read<T>(startArray + 0x20 + sizeof(T) * (count - 1));
         }
 
         private string ReadStringFromArray(IntPtr startArray, int count) {
@@ -149,8 +176,14 @@ namespace LiveSplit.TheMessenger {
             "RaceWinCutscene", "StartFinalPPBossCutscene", "PunchOut"
         };
         public void ClearDlcProgression() {
+            if(unityTask != null || Progression == null) {
+                return;
+            }
             ClearDlcList(bossesDefeatedOffset);
             ClearDlcList(cutscenesPlayedOffset);
+
+            ClearDlcCount(feathersCollectedOffset);
+            ClearDlcCount(maskPiecesOffset);
 
             void ClearDlcList(int listOffset) {
                 IntPtr progressionOffset = game.Read<IntPtr>(Progression.New + listOffset);
@@ -170,6 +203,11 @@ namespace LiveSplit.TheMessenger {
                         ++listId;
                     }
                 }
+            }
+
+            void ClearDlcCount(int listOffset) {
+                IntPtr progressionOffset = game.Read<IntPtr>(Progression.New + listOffset);
+                game.Write(0, progressionOffset + 0x18);
             }
         }
     }

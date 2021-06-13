@@ -105,6 +105,8 @@ namespace LiveSplit.TheMessenger {
                     SplitInventory() ||
                     SplitCutscene() ||
                     SplitSeal() ||
+                    SplitFeather() ||
+                    SplitMask() ||
                     SplitCheckpoint() ||
                     SplitWindmill());
 
@@ -154,6 +156,18 @@ namespace LiveSplit.TheMessenger {
                     && remainingSplits.Split("Seal", memory.ReadLastSeal());
             }
 
+            bool SplitFeather() {
+                return remainingSplits.ContainsKey("Feather")
+                    && memory.FeathersCount.Changed && memory.FeathersCount.New > 0
+                    && remainingSplits.Split("Feather", memory.ReadLastFeather());
+            }
+
+            bool SplitMask() {
+                return remainingSplits.ContainsKey("Mask")
+                    && memory.MasksCount.Changed && memory.MasksCount.New > 0
+                    && remainingSplits.Split("Mask", memory.ReadLastMask());
+            }
+
             bool SplitCheckpoint() {
                 return remainingSplits.ContainsKey("Checkpoint")
                     && memory.Checkpoint.Changed && memory.Checkpoint.New > -1
@@ -172,7 +186,9 @@ namespace LiveSplit.TheMessenger {
         }
 
         public override void OnReset() {
-            roomComponent.Value = DefaultLastRoomTime + "0." + new string('0', RoomTimerPrecisionCurrent);
+            if(roomComponent != null) {
+                roomComponent.Value = DefaultLastRoomTime + "0." + new string('0', RoomTimerPrecisionCurrent);
+            }
             lastRoomKey = null;
             roomWatch.Reset();
         }
