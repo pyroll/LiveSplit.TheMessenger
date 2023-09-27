@@ -86,9 +86,20 @@ namespace LiveSplit.TheMessenger {
                 return !(inMenu && isRunning);
             }
         }
+        private string DetermineStartsWithCondition(int startMethod) {
+            switch(startMethod) {
+                case (int)EStart.NewGame:
+                    return "Level_01";
+                case (int)EStart.NVSkip:
+                    return "Level_02";
+                case (int)EStart.AnyLevel:
+                default:
+                    return "Level_";
+            }
+        }
 
         public override bool Start() {
-            return (memory.Scene.Old.Length < 8 && memory.Scene.New.StartsWith(settings.Start == (int)EStart.NewGame ? "Level_01" : "Level_"))
+            return (memory.Scene.Old.Length < 8 && memory.Scene.New.StartsWith(DetermineStartsWithCondition(settings.Start)))
                 || (!memory.DlcSelection.Old && memory.DlcSelection.New);
         }
 

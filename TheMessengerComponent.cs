@@ -16,7 +16,9 @@ namespace LiveSplit.TheMessenger {
             [Description("New Game")]
             NewGame,
             [Description("Any Level")]
-            AnyLevel
+            AnyLevel,
+            [Description("NV Skip")]
+            NVSkip
         }
 
         public enum EReset {
