@@ -34,6 +34,14 @@ namespace LiveSplit.TheMessenger {
 
         public Pointer<bool> DlcSelection { get; private set; }
 
+        public Pointer<IntPtr> FightingBossController { get; private set; }
+
+        public Pointer<IntPtr> FightingGolemController { get; private set; }
+
+        public Pointer<int> FightingBossTier { get; private set; }
+
+        public Pointer<bool> IsLastHitForFightingBoss { get; private set; }
+
         public StringPointer RoomKey { get; private set; }
 
         private int bossesDefeatedOffset = 0;
@@ -65,6 +73,10 @@ namespace LiveSplit.TheMessenger {
 
             Progression = ptrFactory.Make<IntPtr>("ProgressionManager", "instance", out var progClass);
 
+            FightingBossController = ptrFactory.Make<IntPtr>("FightingBossController", "instance", out var fightingBossClass);
+
+            FightingGolemController = ptrFactory.Make<IntPtr>("FightingGolemController", "instance", out var fightingGolemClass);
+
             Checkpoint = ptrFactory.Make<int>(Progression, unity.GetFieldOffset(progClass, "checkpointSaveInfo"), 0x38);
 
             bossesDefeatedOffset = unity.GetFieldOffset(progClass, "bossesDefeated");
@@ -95,13 +107,17 @@ namespace LiveSplit.TheMessenger {
 
             DlcSelection = ptrFactory.Make<bool>("DLCManager", "instance", 0x34); //'dlcSelectionDone' missing in older ver.
 
+            FightingBossTier = ptrFactory.Make<int>(FightingBossController, unity.GetFieldOffset(fightingBossClass, "currentTier"));
+
+            IsLastHitForFightingBoss = ptrFactory.Make<bool>(FightingGolemController, unity.GetFieldOffset(fightingGolemClass, "lastHitWasSpecial"));
+
             RoomKey = ptrFactory.MakeString("GameManager", "instance", "level", 0x98, 0x10, ptrFactory.StringHeaderSize);
             RoomKey.StringType = EStringType.UTF16Sized;
 
             QuarbleAnim = QuarbleInDone = null;
 
             logger.Log(ptrFactory.ToString());
-                
+ 
             unityTask = null;
         }
 

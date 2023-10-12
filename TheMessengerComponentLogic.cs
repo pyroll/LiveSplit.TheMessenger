@@ -113,6 +113,7 @@ namespace LiveSplit.TheMessenger {
             return remainingSplits.Count() != 0
                 && (SplitLevel() ||
                     SplitBoss() ||
+                    SplitFightingBoss() ||
                     SplitInventory() ||
                     SplitCutscene() ||
                     SplitSeal() ||
@@ -189,6 +190,12 @@ namespace LiveSplit.TheMessenger {
                 return remainingSplits.ContainsKey("UnlockWindmill")
                     && !memory.UseWindmill.Old && memory.UseWindmill.New
                     && remainingSplits.Split("UnlockWindmill");
+            }
+
+            bool SplitFightingBoss() {
+                return remainingSplits.ContainsKey("Boss") &&
+                     (memory.FightingBossTier.New == 4 && !memory.IsLastHitForFightingBoss.Old && memory.IsLastHitForFightingBoss.New)
+                     && remainingSplits.Split("Boss", "18_Volcano_Chase");
             }
         }
 

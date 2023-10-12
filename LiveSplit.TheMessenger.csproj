@@ -61,7 +61,6 @@
     <None Include="Components\LiveSplit.TheMessenger.dll" />
     <None Include="Components\LiveSplit.RuntimeText.dll" />
     <None Include="Components\ComponentsUpdate.xml" />
-    <None Include="Components\ComponentsUpdate.xml" />
     <None Include="Resources\ResourcesUpdate.xml" />
     <None Include="Resources\Tooltips\*" />
     <None Include="Resources\Icons\*" />
