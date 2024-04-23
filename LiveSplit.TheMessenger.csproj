@@ -49,6 +49,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\RoomTimeRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TheMessengerComponent.cs" />
     <Compile Include="TheMessengerComponentLogic.cs" />
@@ -68,6 +69,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <PackageReference Include="CsvHelper">
+      <Version>31.0.4</Version>
+    </PackageReference>
     <PackageReference Include="Voxif.Helpers.UnityHelper" Version="1.0.0" />
     <PackageReference Include="Voxif.Helpers.MemoryHelper" Version="1.0.3" />
     <PackageReference Include="Voxif.Helpers.StructReflector" Version="1.0.1" />

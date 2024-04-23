@@ -1,8 +1,11 @@
 ﻿using LiveSplit.Model;
 using LiveSplit.RuntimeText;
+using LiveSplit.TheMessenger.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -19,7 +22,9 @@ namespace LiveSplit.TheMessenger {
         private string lastRoomTime = DefaultLastRoomTime;
         private readonly Stopwatch roomWatch = new Stopwatch();
         private RuntimeTextComponent roomComponent = null;
-        private bool roomTimer = false;
+        private bool roomTimer = false;        
+        private List<RoomTimeRecord> RoomRecords = new List<RoomTimeRecord>();
+
         public bool RoomTimer {
             get => roomTimer;
             set {
@@ -74,8 +79,15 @@ namespace LiveSplit.TheMessenger {
                         }
                         lastRoomKey = memory.RoomKey.New;
                     }
+                    // Create record of Room Key and Time
+                    RoomTimeRecord record = new RoomTimeRecord();
+                    record.RoomKey = lastRoomKey;
+                    record.RoomTime = lastRoomTime;
+
+                    // Add to list of Records              
+                    RoomRecords.Add(record);
                 }
-                roomComponent.Value = lastRoomTime + FormatRoomTimer(RoomTimerPrecisionCurrent);
+                roomComponent.Value = lastRoomTime + FormatRoomTimer(RoomTimerPrecisionCurrent);        
             }
 
             if(settings.Reset == (int)EReset.MainMenu) {
@@ -106,7 +118,7 @@ namespace LiveSplit.TheMessenger {
         public override void OnStart() {
             items.Clear();
             memory.ClearDlcProgression();
-            remainingSplits.Setup(settings.Splits);
+            remainingSplits.Setup(settings.Splits);          
         }
 
         public override bool Split() {
@@ -209,6 +221,16 @@ namespace LiveSplit.TheMessenger {
             }
             lastRoomKey = null;
             roomWatch.Reset();
+
+            // Write Records to csv file
+            using(var writer = new StreamWriter("TEST.csv")) {
+                foreach(RoomTimeRecord record in RoomRecords) {
+                    writer.WriteLine(record.RoomKey + ',' + record.RoomTime);
+                }                
+            }            
+
+            // Clear List
+            RoomRecords = new List<RoomTimeRecord>();
         }
 
         public override bool Loading() {
