@@ -224,11 +224,11 @@ namespace LiveSplit.TheMessenger {
 
             // Write Records to csv file
             using(var writer = new StreamWriter("TEST.csv")) {
-                foreach(RoomTimeRecord record in RoomRecords) {
-                    writer.WriteLine(record.RoomKey + ',' + record.RoomTime);
+                foreach(RoomTimeRecord record in RoomRecords) {                    
+                    string time = record.RoomTime.Remove(record.RoomTime.Length - 2); //Remove trailing chars from RoomTime string
+                    writer.WriteLine(record.RoomKey + ',' + time);
                 }                
             }            
-
             // Clear List
             RoomRecords = new List<RoomTimeRecord>();
         }
