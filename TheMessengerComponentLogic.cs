@@ -115,9 +115,10 @@ namespace LiveSplit.TheMessenger {
 
         private async void WriteRoomTime(RoomTimeRecord record) {
             string roomInfo = record.RoomKey + "," + record.RoomTime + Environment.NewLine;
-            
+            string formattedInfo = roomInfo.Remove(roomInfo.Length - 2); //Remove trailing chars from RoomTime string
+
             UnicodeEncoding uniencoding = new UnicodeEncoding();
-            byte[] result = uniencoding.GetBytes(roomInfo);
+            byte[] result = uniencoding.GetBytes(formattedInfo);
 
             using (FileStream SourceStream = File.Open("TEST.csv", FileMode.OpenOrCreate)) {                
                 SourceStream.Seek(0, SeekOrigin.End);
