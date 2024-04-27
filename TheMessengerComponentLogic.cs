@@ -8,6 +8,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace LiveSplit.TheMessenger {
     public partial class TheMessengerComponent {
@@ -22,8 +23,7 @@ namespace LiveSplit.TheMessenger {
         private string lastRoomTime = DefaultLastRoomTime;
         private readonly Stopwatch roomWatch = new Stopwatch();
         private RuntimeTextComponent roomComponent = null;
-        private bool roomTimer = false;        
-        private List<RoomTimeRecord> RoomRecords = new List<RoomTimeRecord>();
+        private bool roomTimer = false;           
 
         public bool RoomTimer {
             get => roomTimer;
@@ -83,9 +83,8 @@ namespace LiveSplit.TheMessenger {
                     RoomTimeRecord record = new RoomTimeRecord();
                     record.RoomKey = lastRoomKey;
                     record.RoomTime = lastRoomTime;
-
-                    // Add to list of Records              
-                    RoomRecords.Add(record);
+                    
+                    WriteRoomTime(record);
                 }
                 roomComponent.Value = lastRoomTime + FormatRoomTimer(RoomTimerPrecisionCurrent);        
             }
@@ -110,6 +109,22 @@ namespace LiveSplit.TheMessenger {
             }
         }
 
+        private void CreateCSVFile(string filename) {
+            File.Create(filename).Dispose();
+        }
+
+        private async void WriteRoomTime(RoomTimeRecord record) {
+            string roomInfo = record.RoomKey + "," + record.RoomTime + Environment.NewLine;
+            
+            UnicodeEncoding uniencoding = new UnicodeEncoding();
+            byte[] result = uniencoding.GetBytes(roomInfo);
+
+            using (FileStream SourceStream = File.Open("TEST.csv", FileMode.OpenOrCreate)) {                
+                SourceStream.Seek(0, SeekOrigin.End);
+                await SourceStream.WriteAsync(result, 0, result.Length);
+            }
+        }
+
         public override bool Start() {
             return (memory.Scene.Old.Length < 8 && memory.Scene.New.StartsWith(DetermineStartsWithCondition(settings.Start)))
                 || (!memory.DlcSelection.Old && memory.DlcSelection.New);
@@ -118,7 +133,9 @@ namespace LiveSplit.TheMessenger {
         public override void OnStart() {
             items.Clear();
             memory.ClearDlcProgression();
-            remainingSplits.Setup(settings.Splits);          
+            remainingSplits.Setup(settings.Splits);
+            
+            CreateCSVFile("TEST.csv");
         }
 
         public override bool Split() {
@@ -220,17 +237,7 @@ namespace LiveSplit.TheMessenger {
                 roomComponent.Value = DefaultLastRoomTime + "0." + new string('0', RoomTimerPrecisionCurrent);
             }
             lastRoomKey = null;
-            roomWatch.Reset();
-
-            // Write Records to csv file
-            using(var writer = new StreamWriter("TEST.csv")) {
-                foreach(RoomTimeRecord record in RoomRecords) {                    
-                    string time = record.RoomTime.Remove(record.RoomTime.Length - 2); //Remove trailing chars from RoomTime string
-                    writer.WriteLine(record.RoomKey + ',' + time);
-                }                
-            }            
-            // Clear List
-            RoomRecords = new List<RoomTimeRecord>();
+            roomWatch.Reset();                             
         }
 
         public override bool Loading() {
