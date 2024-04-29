@@ -114,8 +114,8 @@ namespace LiveSplit.TheMessenger {
         }
 
         private async void WriteRoomTime(RoomTimeRecord record) {
-            string roomInfo = record.RoomKey + "," + record.RoomTime + Environment.NewLine;
-            string formattedInfo = roomInfo.Remove(roomInfo.Length - 2); //Remove trailing chars from RoomTime string
+            string roomInfo = record.RoomKey + "," + record.RoomTime;
+            string formattedInfo = roomInfo.Remove(roomInfo.Length - 2) + Environment.NewLine; //Remove trailing chars from RoomTime string            
 
             UnicodeEncoding uniencoding = new UnicodeEncoding();
             byte[] result = uniencoding.GetBytes(formattedInfo);
